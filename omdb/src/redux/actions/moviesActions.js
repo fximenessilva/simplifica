@@ -17,16 +17,44 @@ function searchMoviesError(error) {
   };
 }
 
-export default function searchMovies(searchValue, page) {
+export function searchMovies(searchValue, page) {
   return async (dispatch) => {
     const endpoint = `http://www.omdbapi.com/?s=${searchValue}&page=${page}&apikey=${apiKey}`;
-    console.log({ endpoint });
 
     try {
       const movies = await axios.get(endpoint);
+
       dispatch(searchMoviesSuccess(movies.data));
     } catch (error) {
       dispatch(searchMoviesError(error));
+    }
+  };
+}
+
+function requestMovieDetailSuccess(movieDetail) {
+  return {
+    type: actionTypes.LOAD_MOVIE_DETAIL,
+    movieDetail,
+  };
+}
+
+function requestMovieDetailError(error) {
+  return {
+    type: actionTypes.LOAD_MOVIE_DETAIL_ERROR,
+    error,
+  };
+}
+
+export function requestMovieDetail(id) {
+  return async (dispatch) => {
+    const endpoint = `http://www.omdbapi.com/?i=${id}&apikey=${apiKey}`;
+
+    try {
+      const movieDetail = await axios.get(endpoint);
+      // console.log(movieDetail.data);
+      dispatch(requestMovieDetailSuccess(movieDetail.data));
+    } catch (error) {
+      requestMovieDetailError(error);
     }
   };
 }

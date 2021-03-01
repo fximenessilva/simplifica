@@ -1,12 +1,15 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import searchMovies from '../../redux/actions/moviesActions';
+import { Link } from 'react-router-dom';
+import { searchMovies, requestMovieDetail } from '../../redux/actions/moviesActions';
 
-function MoviesList({ dispatch, moviesSearchList }) {
+function MoviesList({ dispatch, moviesSearchList, movieDetail }) {
   const [search, setSearch] = useState('');
   const [page, setPage] = useState(1);
 
@@ -14,7 +17,7 @@ function MoviesList({ dispatch, moviesSearchList }) {
     dispatch(searchMovies(search, page));
   }, [search, page]);
 
-  console.log(moviesSearchList?.Search);
+  // console.log(movieDetail);
 
   function setMin() {
     if (page > 1) {
@@ -30,14 +33,30 @@ function MoviesList({ dispatch, moviesSearchList }) {
 
   return (
     <>
-      <input
-        type="text"
-        value={search}
-        onChange={(e) => { setSearch(e.target.value); }}
-      />
-      {moviesSearchList?.Search && moviesSearchList?.Search?.length && (
-        moviesSearchList.Search.map((movie) => <p key={movie.imdbID}>{movie.Title}</p>)
-      )}
+      <div>
+        <input
+          type="text"
+          value={search}
+          onChange={(e) => { setSearch(e.target.value); }}
+        />
+      </div>
+      <div>
+        <ul>
+          {moviesSearchList?.Search && moviesSearchList?.Search?.length && (
+            moviesSearchList.Search.map((movie) => (
+              <ul key={movie.imdbID}>
+                <li key={movie.imdbID} onClick={() => dispatch(requestMovieDetail(movie.imdbID))}>
+                  <Link to={`/${movie.imdbID}`}>
+                    {movie.Title}
+                  </Link>
+                </li>
+
+              </ul>
+
+            ))
+          )}
+        </ul>
+      </div>
       <div>
         <button onClick={() => setMin()} type="button">-</button>
         <span>
@@ -55,6 +74,7 @@ function MoviesList({ dispatch, moviesSearchList }) {
 function mapStateToProps({ moviesReducer }) {
   return {
     moviesSearchList: moviesReducer.moviesSearchList,
+
   };
 }
 

@@ -7,6 +7,11 @@ export default function moviesReducers(state = {}, action) {
     case actionTypes.LOAD_SEARCH_ERROR:
       return { ...state, error: action.error };
 
+    case actionTypes.LOAD_MOVIE_DETAIL:
+      return { ...state, movieDetail: action.movieDetail };
+    case actionTypes.LOAD_MOVIE_DETAIL_ERROR:
+      return { ...state, error: action.error };
+
     default:
       return state;
   }
