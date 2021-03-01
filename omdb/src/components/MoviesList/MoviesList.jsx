@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
@@ -9,17 +10,24 @@ function MoviesList({ dispatch, moviesSearchList }) {
   const [search, setSearch] = useState('');
   const [page, setPage] = useState(1);
 
-  // console.log(moviesSearchList);
-
   useEffect(() => {
     dispatch(searchMovies(search, page));
   }, [search, page]);
+
+  console.log(moviesSearchList?.Search);
 
   function setMin() {
     if (page > 1) {
       setPage(page - 1);
     }
   }
+
+  function setMax() {
+    if (moviesSearchList?.Search?.length === 10) {
+      setPage(page + 1);
+    }
+  }
+
   return (
     <>
       <input
@@ -30,13 +38,16 @@ function MoviesList({ dispatch, moviesSearchList }) {
       {moviesSearchList?.Search && moviesSearchList?.Search?.length && (
         moviesSearchList.Search.map((movie) => <p key={movie.imdbID}>{movie.Title}</p>)
       )}
-      <button onClick={() => setMin()} type="button">-</button>
-      <span>
-        Page
-        {' '}
-        {page}
-      </span>
-      <button onClick={() => setPage(page + 1)} type="button">+</button>
+      <div>
+        <button onClick={() => setMin()} type="button">-</button>
+        <span>
+          Page
+          {' '}
+          {page}
+        </span>
+        <button onClick={() => setMax()} type="button">+</button>
+      </div>
+
     </>
   );
 }
