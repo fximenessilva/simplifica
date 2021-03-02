@@ -13,6 +13,10 @@ function MovieDetail({ movieDetail, dispatch }) {
     }
   }, [movieDetail]);
 
+  if (movieDetail) {
+    console.log(movieDetail);
+  }
+
   return (
     <>
       {movieDetail?.Title}
