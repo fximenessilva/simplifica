@@ -11,7 +11,7 @@ function MovieDetail({ movieDetail, dispatch }) {
     if (!movieDetail || movieDetail?.length) {
       dispatch(requestMovieDetail(id));
     }
-  }, [movieDetail?.length]);
+  }, [movieDetail]);
 
   return (
     <>
