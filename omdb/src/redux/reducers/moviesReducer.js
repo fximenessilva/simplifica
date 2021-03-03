@@ -1,3 +1,4 @@
+/* eslint-disable no-sequences */
 import actionTypes from '../actions/actionTypes';
 
 export default function moviesReducers(state = {}, action = {}) {
@@ -13,7 +14,12 @@ export default function moviesReducers(state = {}, action = {}) {
       return { ...state, error: action.error };
 
     case actionTypes.LOAD_POPULAR_MOVIES:
-      return { ...state, popularMovies: action.popularMovies.sort(() => Math.random() - 0.5) };
+      return {
+        ...state,
+        popularMovies: action.popularMovies
+          .sort(() => Math.random() - 0.5)
+          .reduce((acc, e, i) => (i % 10 ? acc[acc.length - 1].push(e) : acc.push([e]), acc), []),
+      };
     case actionTypes.LOAD_POPULAR_MOVIES_ERROR:
       return { ...state, error: action.error };
 
