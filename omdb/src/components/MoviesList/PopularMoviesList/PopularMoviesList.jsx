@@ -4,10 +4,14 @@
 /* eslint-disable no-nested-ternary */
 /* eslint-disable react/prop-types */
 
+
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+
+import React from 'react';
+
 import { Link } from 'react-router-dom';
-import { requestPopularMovies } from '../../../redux/actions/moviesActions';
+
 
 import './styles/PopularMoviesList.css';
 
@@ -63,10 +67,5 @@ const PopularMoviesList = ({ popularMovies, dispatch }) => {
   );
 };
 
-function mapStateToProps({ moviesReducer }) {
-  return {
-    popularMovies: moviesReducer.popularMovies,
-  };
-}
 
-export default connect(mapStateToProps)(PopularMoviesList);
+export default PopularMoviesList;

@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/label-has-associated-control */
@@ -6,9 +7,10 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import BounceLoader from 'react-spinners/BounceLoader';
 import { searchMovies } from '../../../redux/actions/moviesActions';
 
-import PopularMoviesList from '../PopularMoviesList/PopularMoviesList';
+import PopularMovies from '../PopularMoviesList/PopularMovies';
 import MoviesSearch from '../MoviesSearch/MoviesSearch';
 
 function MoviesList({ dispatch, moviesSearchList }) {
@@ -41,6 +43,7 @@ function MoviesList({ dispatch, moviesSearchList }) {
           onChange={(e) => { setSearch(e.target.value); }}
         />
       </div>
+
       {search.length >= 3 ? (
         <MoviesSearch
           setSearch={setSearch}
@@ -51,7 +54,8 @@ function MoviesList({ dispatch, moviesSearchList }) {
           page={page}
         />
       )
-        : <PopularMoviesList />}
+        : search.length === 0 ? (<PopularMovies />)
+          : (<BounceLoader color="#E50914" size={50} />) }
 
     </>
   );

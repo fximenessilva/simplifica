@@ -1,6 +1,6 @@
 import actionTypes from '../actions/actionTypes';
 
-export default function moviesReducers(state = {}, action) {
+export default function moviesReducers(state = {}, action = {}) {
   switch (action.type) {
     case actionTypes.LOAD_SEARCH:
       return { ...state, moviesSearchList: action.moviesSearchList };
