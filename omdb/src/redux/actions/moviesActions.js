@@ -51,10 +51,38 @@ export function requestMovieDetail(id) {
 
     try {
       const movieDetail = await axios.get(endpoint);
-      // console.log(movieDetail.data);
+
       dispatch(requestMovieDetailSuccess(movieDetail.data));
     } catch (error) {
       requestMovieDetailError(error);
+    }
+  };
+}
+
+function requestPopularMoviesSuccess(popularMovies) {
+  return {
+    type: actionTypes.LOAD_POPULAR_MOVIES,
+    popularMovies,
+  };
+}
+
+function requestPopularMoviesError(error) {
+  return {
+    type: actionTypes.LOAD_POPULAR_MOVIES_ERROR,
+    error,
+  };
+}
+
+export function requestPopularMovies() {
+  return async (dispatch) => {
+    const endpoint = 'http://localhost:3075/movies';
+
+    try {
+      const popularMovies = await axios.get(endpoint);
+
+      dispatch(requestPopularMoviesSuccess(popularMovies.data));
+    } catch (error) {
+      dispatch(requestPopularMoviesError(error));
     }
   };
 }

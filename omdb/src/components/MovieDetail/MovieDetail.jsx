@@ -8,14 +8,8 @@ function MovieDetail({ movieDetail, dispatch }) {
   const id = `tt${window.location.pathname.match(/\d+/)[0]}`;
 
   useEffect(() => {
-    if (!movieDetail || movieDetail?.length) {
-      dispatch(requestMovieDetail(id));
-    }
-  }, [movieDetail]);
-
-  if (movieDetail) {
-    console.log(movieDetail);
-  }
+    dispatch(requestMovieDetail(id));
+  }, [movieDetail?.imdbID]);
 
   return (
     <>

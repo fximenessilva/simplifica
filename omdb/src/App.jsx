@@ -6,7 +6,7 @@ import configureStore from './redux/configureStore';
 
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import MoviesList from './components/MoviesList/MoviesList';
+import MoviesList from './components/MoviesList/MoviesList/MoviesList';
 import MovieDetail from './components/MovieDetail/MovieDetail';
 
 const store = configureStore();

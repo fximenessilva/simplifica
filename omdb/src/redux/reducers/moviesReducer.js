@@ -12,6 +12,11 @@ export default function moviesReducers(state = {}, action) {
     case actionTypes.LOAD_MOVIE_DETAIL_ERROR:
       return { ...state, error: action.error };
 
+    case actionTypes.LOAD_POPULAR_MOVIES:
+      return { ...state, popularMovies: action.popularMovies.sort(() => Math.random() - 0.5) };
+    case actionTypes.LOAD_POPULAR_MOVIES_ERROR:
+      return { ...state, error: action.error };
+
     default:
       return state;
   }
