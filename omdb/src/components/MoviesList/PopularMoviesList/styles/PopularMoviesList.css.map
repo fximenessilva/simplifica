@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,eAAe,CAAA;EACX,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,GAAG;CAEtB",
+    "sources": [
+        "PopularMoviesList.scss"
+    ],
+    "names": [],
+    "file": "PopularMoviesList.css"
+}
