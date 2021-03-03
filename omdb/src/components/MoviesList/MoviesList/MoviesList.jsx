@@ -6,18 +6,18 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { searchMovies, requestMovieDetail } from '../../redux/actions/moviesActions';
+import { searchMovies } from '../../../redux/actions/moviesActions';
 
-function MoviesList({ dispatch, moviesSearchList, movieDetail }) {
+import PopularMoviesList from '../PopularMoviesList/PopularMoviesList';
+import MoviesSearch from '../MoviesSearch/MoviesSearch';
+
+function MoviesList({ dispatch, moviesSearchList }) {
   const [search, setSearch] = useState('');
   const [page, setPage] = useState(1);
 
   useEffect(() => {
     dispatch(searchMovies(search, page));
   }, [search, page]);
-
-  // console.log(movieDetail);
 
   function setMin() {
     if (page > 1) {
@@ -33,6 +33,7 @@ function MoviesList({ dispatch, moviesSearchList, movieDetail }) {
 
   return (
     <>
+
       <div>
         <input
           type="text"
@@ -40,32 +41,17 @@ function MoviesList({ dispatch, moviesSearchList, movieDetail }) {
           onChange={(e) => { setSearch(e.target.value); }}
         />
       </div>
-      <div>
-        <ul>
-          {moviesSearchList?.Search && moviesSearchList?.Search?.length && (
-            moviesSearchList.Search.map((movie) => (
-              <ul key={movie.imdbID}>
-                <li key={movie.imdbID} onClick={() => dispatch(requestMovieDetail(movie.imdbID))}>
-                  <Link to={`/${movie.imdbID}`}>
-                    {movie.Title}
-                  </Link>
-                </li>
-
-              </ul>
-
-            ))
-          )}
-        </ul>
-      </div>
-      <div>
-        <button onClick={() => setMin()} type="button">-</button>
-        <span>
-          Page
-          {' '}
-          {page}
-        </span>
-        <button onClick={() => setMax()} type="button">+</button>
-      </div>
+      {search.length >= 3 ? (
+        <MoviesSearch
+          setSearch={setSearch}
+          moviesSearchList={moviesSearchList}
+          setMin={setMin}
+          setMax={setMax}
+          search={search}
+          page={page}
+        />
+      )
+        : <PopularMoviesList />}
 
     </>
   );
