@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-no-duplicate-props */
+/* eslint-disable jsx-a11y/interactive-supports-focus */
 /* eslint-disable no-nested-ternary */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
@@ -9,13 +11,18 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import BounceLoader from 'react-spinners/BounceLoader';
 import { searchMovies } from '../../../redux/actions/moviesActions';
+import './styles/MoviesList.css';
 
 import PopularMovies from '../PopularMoviesList/PopularMovies';
 import MoviesSearch from '../MoviesSearch/MoviesSearch';
 
-function MoviesList({ dispatch, moviesSearchList }) {
-  const [search, setSearch] = useState('');
+function MoviesList({
+  dispatch, moviesSearchList,
+}) {
   const [page, setPage] = useState(1);
+  const [search, setSearch] = useState('');
+  const [inputSelected, setInputSelected] = useState(false);
+  const input = document.querySelector('.searchInput');
 
   useEffect(() => {
     dispatch(searchMovies(search, page));
@@ -34,14 +41,24 @@ function MoviesList({ dispatch, moviesSearchList }) {
   }
 
   return (
-    <>
+    <div className="moviesList-wrapper">
 
-      <div>
+      <div className="searchInput-wrapper">
         <input
+          placeholder="Search Titles..."
           type="text"
           value={search}
           onChange={(e) => { setSearch(e.target.value); }}
+          onBlur={() => { setInputSelected(false); }}
+          className={inputSelected ? 'searchInput searchInput-selected' : 'searchInput searchInput-notSelected'}
         />
+        <span
+          role="button"
+          onClick={() => { setInputSelected(true); setTimeout(() => { input.focus(); }); }}
+          className={`material-icons searchInput-icon ${!inputSelected ? 'searchInput-icon-notSelected' : 'searchInput-icon-Selected'}  `}
+        >
+          search
+        </span>
       </div>
 
       {search.length >= 3 ? (
@@ -57,7 +74,7 @@ function MoviesList({ dispatch, moviesSearchList }) {
         : search.length === 0 ? (<PopularMovies />)
           : (<BounceLoader color="#E50914" size={50} />) }
 
-    </>
+    </div>
   );
 }
 

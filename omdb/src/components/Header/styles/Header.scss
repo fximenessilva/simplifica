@@ -1,0 +1,18 @@
+.header-wrapper{
+    background-color: #14141485;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    header{
+        margin: 0px 40px;
+    }
+}
+
+.header-logo{
+    width: 100px;
+    height: 35px;
+}

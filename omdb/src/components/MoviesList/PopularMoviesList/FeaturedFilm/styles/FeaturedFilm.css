@@ -1,0 +1,16 @@
+.featured-img {
+  width: 100vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.feature-dscrptn-img-wrapper {
+  position: relative;
+  bottom: 300px;
+}
+
+.feature-dscrptn-img {
+  width: 370px;
+  margin-left: 30px;
+}
+/*# sourceMappingURL=FeaturedFilm.css.map */

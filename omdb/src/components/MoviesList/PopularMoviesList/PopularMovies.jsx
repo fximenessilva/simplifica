@@ -6,6 +6,7 @@ import BounceLoader from 'react-spinners/BounceLoader';
 import { requestPopularMovies } from '../../../redux/actions/moviesActions';
 
 import PopularMoviesList from './PopularMoviesList';
+import FeaturedFilm from './FeaturedFilm/FeaturedFilm';
 
 const PopularMovies = ({ popularMovies, dispatch }) => {
   useEffect(() => {
@@ -16,6 +17,7 @@ const PopularMovies = ({ popularMovies, dispatch }) => {
 
   return (
     <>
+      <FeaturedFilm />
       {!popularMovies
         ? <BounceLoader color="#E50914" size={50} />
         : <PopularMoviesList popularMovies={popularMovies} />}

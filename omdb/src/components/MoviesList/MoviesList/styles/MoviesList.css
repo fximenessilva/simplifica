@@ -1,0 +1,52 @@
+.searchInput-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 18px;
+  right: 50px;
+}
+
+.searchInput-notSelected {
+  display: none;
+}
+
+.searchInput {
+  height: 20px;
+  width: 182px;
+  padding: 6px;
+  background-color: rgba(36, 36, 36, 0.5);
+  border: 1px solid white;
+  color: white;
+  font-size: 0.9em;
+  letter-spacing: 0.02em;
+  font-weight: 100;
+  font-family: Helvetica, sans-serif;
+}
+
+.searchInput-selected {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 6px 0px 6px 30px;
+}
+
+.searchInput-icon-notSelected {
+  right: 35px;
+}
+
+.searchInput-icon-Selected {
+  right: 235px;
+}
+
+.searchInput-icon {
+  cursor: pointer;
+  color: white;
+  font-size: 1.5rem;
+  position: fixed;
+  top: 24px;
+}
+/*# sourceMappingURL=MoviesList.css.map */
