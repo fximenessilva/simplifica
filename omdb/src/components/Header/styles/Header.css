@@ -1,0 +1,23 @@
+.header-wrapper {
+  background-color: #14141485;
+  height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.header-wrapper header {
+  margin: 0px 40px;
+}
+
+.header-logo {
+  width: 100px;
+  height: 35px;
+}
+/*# sourceMappingURL=Header.css.map */
