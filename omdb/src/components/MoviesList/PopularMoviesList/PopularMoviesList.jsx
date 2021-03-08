@@ -9,21 +9,24 @@ import './styles/PopularMoviesList.css';
 const PopularMoviesList = ({ popularMovies }) => {
   function printPopularMoviesRow(arr, rowNmbr) {
     return (
-      <ul className={`poplrMovie-row poplrMovie-row${rowNmbr}--wrapper`}>
-        {arr.map((movie) => (
-          <li key={movie?.imdbID}>
-            <Link to={`/${movie?.imdbID}`}>
-              <div className="poplrMovie-img-wrapper">
-                <img
-                  className="poplrMovie-img"
-                  src={movie?.Poster}
-                  alt=""
-                />
-              </div>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <>
+        {rowNmbr === 1 ? <p className="pplr-tag">Popular</p> : null}
+        <ul className={`poplrMovie-row poplrMovie-row${rowNmbr}--wrapper`}>
+          {arr.map((movie) => (
+            <li key={movie?.imdbID}>
+              <Link to={`/${movie?.imdbID}`}>
+                <div className="poplrMovie-img-wrapper">
+                  <img
+                    className="poplrMovie-img"
+                    src={movie?.Poster}
+                    alt=""
+                  />
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </>
     );
   }
 

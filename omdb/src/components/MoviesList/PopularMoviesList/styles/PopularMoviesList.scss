@@ -1,7 +1,48 @@
-.poplrMovie-row{
-    display: flex;
-    flex-direction: row;
-    overflow-x: scroll;
+.poplrMovies-wrapper{
+    background: linear-gradient(black, #141414);
 
+    .pplr-tag{
+        color: #e5e5e5;
+        font-size: 18px;
+        position: relative;
+        top: -60px;
+        margin: 0px 10px 0px 43px;
+    }
+
+    .poplrMovie-row{
+        display: flex;
+        flex-direction: row;
+        overflow-x: scroll;
+       
+        margin: 35px 0px;
+    }
+    .poplrMovie-row1--wrapper{
+        margin-top: 0px;
+    }
+
+    .poplrMovie-row1--wrapper{
+        padding-left: 43px;
+        position: relative;
+        top: -40px;
+       
+    }
+
+    
 }
+.poplrMovie-img-wrapper{
+    width: 150px;
+    height: 220px;
+    margin: 0px 20px 0px 0px;
+
+    
+
+    .poplrMovie-img{
+        width: 100%;
+        height: 100%;
+        border-radius: 4px;
+
+       
+    }
+}
+
 
