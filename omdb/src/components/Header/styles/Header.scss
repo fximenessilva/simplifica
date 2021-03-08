@@ -1,11 +1,12 @@
 .header-wrapper{
-    background-color: #14141485;
+
     height: 70px;
     display: flex;
     align-items: center;
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 1;
 
     header{
         margin: 0px 40px;
@@ -15,4 +16,14 @@
 .header-logo{
     width: 100px;
     height: 35px;
+}
+
+.header-top{
+    transition: 0.6s;
+    background-color: #14141485;
+}
+
+.header-scrolled{
+    transition: 0.6s;
+    background-color: rgb(11, 11, 11);
 }
