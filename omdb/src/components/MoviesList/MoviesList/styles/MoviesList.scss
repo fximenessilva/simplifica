@@ -6,7 +6,7 @@
     position: fixed;
     top: 18px;
     right: 50px;
-
+    z-index: 10;
 }
 
 
@@ -26,12 +26,13 @@
     letter-spacing: 0.02em;
     font-weight: 100;
     font-family: Helvetica, sans-serif;
+  
 }
 
 .searchInput-selected{
     display: flex;
     padding: 6px 0px 6px 30px;
-    
+
 }
 
 .searchInput-icon-notSelected{

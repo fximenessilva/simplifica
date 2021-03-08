@@ -1,5 +1,4 @@
 .header-wrapper {
-  background-color: #14141485;
   height: 70px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10,6 +9,7 @@
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 1;
 }
 
 .header-wrapper header {
@@ -19,5 +19,17 @@
 .header-logo {
   width: 100px;
   height: 35px;
+}
+
+.header-top {
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  background-color: #14141485;
+}
+
+.header-scrolled {
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  background-color: #0b0b0b;
 }
 /*# sourceMappingURL=Header.css.map */

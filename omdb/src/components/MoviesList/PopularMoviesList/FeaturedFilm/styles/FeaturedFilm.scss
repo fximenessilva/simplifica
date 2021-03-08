@@ -1,16 +1,73 @@
-.featured-img{
-    width: 100vw;
-    object-fit: cover;
-}
 
-.feature-dscrptn-img-wrapper{
+.featured-img-wrapper{
+    background-image: url(https://trello-attachments.s3.amazonaws.com/60411589f3a6285816a489c0/604115a9e8f4407a40cd1fe3/deebf4f245bb2e58dace6159cb445569/featuredFilm.webp);
+    height: 530px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 30px;
     position: relative;
-    bottom: 300px;
-
-    
 }
 
-.feature-dscrptn-img{
-    width: 370px;
-    margin-left: 30px;
+.featured-dscrptn-img-wrapper{
+    top: 18%;
+    position: absolute;
+    padding: 10px 43px;
+
+    img{
+        width: 370px;
+    }
+    p{
+        margin-top: 10px;
+        line-height: 26px;
+        color: #FFF;
+        font-weight: lighter;
+        width: 370px;
+        font-size: 16px;
+        text-shadow: 0.5px 0.5px 10px #000
+    }
+}
+
+
+.featuredFilm-btns-wrapper{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    padding: 10px 43px;
+    top: 72%;
+   
+
+    button{
+        font-size: 16px;
+        font-weight: lighter;
+        transition: 0.2s;
+        display: flex;
+        border-radius: 4px;
+        cursor: pointer;
+        align-items: center;
+        border: none;
+        &:hover{
+            opacity: 0.8;
+            transition: 0.2s;
+        }
+    }
+
+
+    .featured-play-btn{
+    background-color: #fff;
+    padding: 10px 25px;
+    color: #000;
+    }
+
+    .featured-info-btn{
+    background-color: rgba(109,109,110,.7);
+    justify-content: center;
+    padding: 10px 20px;
+    margin-left: 15px;
+    color: #FFF;
+
+    img{
+        filter: invert(100%);
+        margin-right: 5px;
+    }
+    }
 }
