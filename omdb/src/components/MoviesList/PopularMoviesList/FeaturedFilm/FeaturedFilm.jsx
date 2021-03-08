@@ -19,13 +19,14 @@ const FeaturedFilm = (props) => (
           </p>
         </div>
         <div className="featuredFilm-btns-wrapper">
-          <button type="button" className="featured-play-btn">
-            <span className="material-icons">
-              play_arrow
-            </span>
-            PLAY
-          </button>
-
+          <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=fRj2NxkM84U&ab_channel=Netflix">
+            <button type="button" className="featured-play-btn">
+              <span className="material-icons">
+                play_arrow
+              </span>
+              PLAY
+            </button>
+          </a>
           <Link to="/tt0472198">
             <button type="button" className="featured-info-btn">
               <img src="https://trello-attachments.s3.amazonaws.com/60411589f3a6285816a489c0/604115a9e8f4407a40cd1fe3/b77d33c685ca7a1b90a32039fc82806f/14213041731615200897.svg" alt="" />
