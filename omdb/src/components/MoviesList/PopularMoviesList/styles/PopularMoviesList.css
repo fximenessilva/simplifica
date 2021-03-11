@@ -58,37 +58,121 @@
 
 .poplrMovie-detail {
   width: 150px;
-  height: 220px;
+  height: 100%;
   position: absolute;
-  top: 0px;
+  top: 0%;
   opacity: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  padding-top: 0px;
 }
 
 .poplrMovie-detail:hover {
+  padding-top: 45px;
   width: 150px;
-  height: 220px;
+  height: 79.5%;
   position: absolute;
-  top: 0px;
+  top: 0%;
   opacity: 1;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(60%, black));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, black 60%);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .poplrMovie-detail-row1 {
-  height: 380px;
+  height: 100%;
   width: 220px;
   position: absolute;
-  top: 0px;
+  top: 0%;
   opacity: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  padding-top: 0px;
 }
 
 .poplrMovie-detail-row1:hover {
-  height: 380px;
+  padding-top: 90px;
+  height: 76.5%;
   width: 220px;
   position: absolute;
-  top: 0px;
+  top: 0%;
   opacity: 1;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(30%, rgba(0, 0, 0, 0.5)));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 30%);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-div #puta:hover {
-  display: none;
+.poplrMovie-detail * {
+  color: white;
+  font-weight: lighter;
+}
+
+.poplrMovie-detail-title {
+  margin-top: 65px;
+  padding: 10px;
+  font-size: 14px;
+  text-shadow: 1px 1px 4px #000;
+  font-weight: 400;
+}
+
+.poplrMovie-detail-rating-logo {
+  width: 25px;
+  margin-right: 5px;
+  padding-left: 10px;
+}
+
+.poplrMovie-detail-rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.poplrMovie-detail-runtime {
+  padding: 3px 10px;
+  font-size: 12px;
+}
+
+.poplrMovie-detail-rating {
+  font-size: 12px;
+}
+
+.poplrMovie-detail-description {
+  padding: 3px 10px;
+  font-size: 12px;
+}
+
+.poplrMovie-detail-rating-runtime-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.poplrMovie-detail-row1 .poplrMovie-detail-title {
+  margin-top: 130px;
+  font-size: 24px;
+}
+
+.poplrMovie-detail-row1 * {
+  font-size: 1em;
+}
+
+.poplrMovie-detail-row1 .poplrMovie-detail-rating-logo {
+  width: 35px;
 }
 /*# sourceMappingURL=PopularMoviesList.css.map */
