@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 /* eslint-disable react/jsx-no-duplicate-props */
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 /* eslint-disable no-nested-ternary */
@@ -42,8 +43,17 @@ function MoviesList({
 
   return (
     <div className="moviesList-wrapper">
-
       <div className="searchInput-wrapper">
+        {search.length < 3 && search.length > 0 ? (
+          <>
+            <div className="arrow" />
+            <div className="minCharacter-label-wrapper">
+              <p>
+                Write at least 3 characters!
+              </p>
+            </div>
+          </>
+        ) : null}
         <input
           placeholder="Search Titles..."
           type="text"
@@ -72,7 +82,11 @@ function MoviesList({
         />
       )
         : search.length === 0 ? (<PopularMovies />)
-          : (<BounceLoader color="#E50914" size={50} />) }
+          : (
+            <>
+              <BounceLoader margin="200px" color="#E50914" size={50} />
+            </>
+          ) }
 
     </div>
   );
