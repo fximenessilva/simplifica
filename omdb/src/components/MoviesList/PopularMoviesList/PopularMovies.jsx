@@ -19,7 +19,7 @@ const PopularMovies = ({ popularMovies, dispatch }) => {
     <>
       <FeaturedFilm />
       {!popularMovies
-        ? <BounceLoader color="#E50914" size={50} />
+        ? <BounceLoader margin="auto" color="#E50914" size={50} />
         : <PopularMoviesList popularMovies={popularMovies} />}
     </>
 

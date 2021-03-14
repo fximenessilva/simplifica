@@ -3,6 +3,7 @@
   outline: none;
   font-family: Helvetica, sans-serif;
   text-decoration: none;
+  
 }
 
 ul {
@@ -12,4 +13,13 @@ ul {
 ::-webkit-scrollbar {
   width: 0;
   background: transparent;
+}
+
+.css-1d9ls5a{
+  display: flex;
+  margin: 30% auto
+}
+
+body{
+  background: linear-gradient(black, #141414);
 }
