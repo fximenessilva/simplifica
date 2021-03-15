@@ -6,6 +6,7 @@ import BounceLoader from 'react-spinners/BounceLoader';
 import { requestMovieDetail } from '../../redux/actions/moviesActions';
 
 import MovieDetailDummy from './MovieDetailDummy';
+import './styles/MovieDetail.css';
 
 function MovieDetail({ movieDetail, dispatch }) {
   const id = `tt${window.location.pathname.match(/\d+/)[0]}`;
