@@ -1,0 +1,254 @@
+.movieDetail-wrapper * {
+    color: white
+}
+
+.movieDetail-wrapper{
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background-color: black;
+    
+
+    .movieDetail-info{
+        margin-top: 40px;
+
+        .movieDetail-btn-wrapper{
+            margin: 0px 0px 10px 37px;
+            transition: 0.2s;
+            :hover{
+                color: #E50914;
+                transition: 0.2s;
+                cursor: pointer;
+            }
+        }
+
+        .length-year-rating-wrapper{
+            width: 300px;
+            display: flex;
+            flex-direction: row;
+            margin: 0px 480px 20px 0px;
+            align-items: center;
+            color: #e1e1e1;
+            padding-left: 0px;
+        
+            *{
+                color: #e1e1e1;
+                margin-left: 8px;
+
+               
+            }
+
+            .movieDetail-length{
+                margin-left: 40px;
+            }
+
+            .movieDetail-rating{
+                padding: 4px 6px;
+                background-color: grey;
+                color: #0B0B0B;
+                border-radius: 5px;
+                font-size: 14px;
+            }
+        }
+
+        .movieDetail-title-wrapper h3{
+            font-size: 3em;
+            width: 65%;
+            margin-left:40px;
+        }
+
+        .movieDetail-rating-favorites-wrapper{
+            padding-left: 0px;
+            display: flex;
+            align-items: center;
+
+            .imdb-rating img{
+                width: 34px;
+                height: 40px;
+            }
+
+            .imdb-rating{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin: 20px 20px 20px 43px;
+                
+                p{
+                    margin-left: 10px;
+                }
+            }
+            .metascore-rating{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin: 20px 20px 20px 10px;
+
+                img{
+                    width: 28px;
+                    height: 28px;
+                }
+                
+                p{
+                    margin-left: 10px;
+                }
+
+                }
+            .add-favorite{
+                
+                margin: 23px 20px 20px 10px;
+                cursor: pointer;
+                .movieDetail-favorite{
+                    font-size: 1.8em;
+                }
+            }
+           
+        }
+        .movieDetail-plot-wrapper{
+            margin: 5px 0px 10px 43px;
+            width: 60%;
+            line-height: 1.4em;
+            letter-spacing: 0.05em;
+            font-weight: lighter;
+            
+            h5{
+                color: rgb(182, 182, 182);
+                font-size: 1.1em;
+                margin-bottom: 10px;
+                font-weight: lighter;
+                letter-spacing: 0.1em;
+            }
+        }
+        .movieDetail-cast-genre-director-wrapper{
+            *{
+                padding-left: 0px;
+            }
+            margin: 20px 0px 300px 45px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 25% 20% 25%;
+            h5{
+                color: rgb(182, 182, 182);
+                font-size: 1em;
+                margin: 10px 0px;
+                font-weight: lighter;
+                letter-spacing: 0.1em;
+            }
+            li{
+                font-size: 14px;
+                color: #e1e1e1;
+                font-weight: lighter;
+                margin-top: 4px;
+            }
+
+           
+        }
+    }
+
+    .movieDetail-poster-wrapper{
+        margin-top: 40px;
+
+        img{
+            width: 300px;
+            height: 445px;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 1200px){
+    .movieDetail-plot-wrapper{
+        width: 80% !important;
+    }
+
+    .movieDetail-title-wrapper h3{
+        width: 75% !important;
+    }
+    .movieDetail-cast-genre-director-wrapper{
+        grid-template-columns: 33% 25% 25% !important;
+    }
+}
+
+
+@media only screen and (max-width: 800px){
+    .movieDetail-btn-wrapper{
+        margin: 0px 0px 10px -2px !important;
+        text-shadow: 0.5px 0.5px 1px #000;
+   
+
+        :hover{
+       
+            text-shadow: none;
+        }
+        span{
+            font-size: 2em;
+        }
+    }
+
+    
+    .movieDetail-wrapper{
+        margin-top: 150px;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(2, 50%);
+        
+        div:nth-of-type(1){
+            order: 1;
+            
+        }
+        .movieDetail-title-wrapper h3, .movieDetail-length, .movieDetail-year{
+            text-shadow: 1px 1px 1px #000;
+        }
+        .movieDetail-rating{
+            color: white !important
+        }
+       
+        .movieDetail-poster-wrapper{
+            display: flex;
+            justify-content: center;
+
+            img{
+                width: 100%;
+                height: 100%;
+            }
+            margin:  20px 50px;
+        }
+
+        .movieDetail-info{
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, black 30%);
+            position: relative;
+            bottom: 500px;
+            margin:  20px 49px;
+        }
+    }
+    .movieDetail-title-wrapper h3, .imdb-rating, .movieDetail-plot-wrapper, .movieDetail-cast-genre-director-wrapper{
+        margin-left: 0px !important;
+    }
+    .movieDetail-length, .imdb-rating img{
+        margin-left: 1px !important;
+    }
+
+   
+    .imdb-rating img{
+        width: 17px !important;
+        height: 20px !important;
+    }
+
+    .metascore-rating img{
+        width: 13px !important;
+        height: 13px !important;
+    }
+
+    .movieDetail-rating{
+        font-size: 0.8em !important;
+        padding: 2.5px 4px !important;
+    }
+}
+
+@media only screen and (max-width: 400px){
+ *{
+        font-size: 0.9em;
+    }
+
+    .movieDetail-cast li, .movieDetail-genre li, .movieDetail-director li{
+        font-size: 10px !important;
+    }
+}
